@@ -15,6 +15,8 @@ SAGAMI Social Innovation Lab (SSIL)
     * [GitHub - sanogawa-sakuteru.github.io](https://github.com/sanogawa-sakuteru/sanogawa-sakuteru.github.io)
 
 ### Work
+* [GitHub Pagesに独自ドメインを設定する方法](https://zenn.dev/donchan922/articles/59c54fe659128294bb65)
+
 ```
 …or create a new repository on the command line
 echo "# ssil-jp.github.io" >> README.md
