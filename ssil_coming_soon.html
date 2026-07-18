@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAGAMI Social Innovation Lab (SSIL) | Coming Soon</title>
+    <style>
+        /* Base Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #0b132b;
+            color: #f4f6f9;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .accent-color {
+            color: #4cc9f0;
+        }
+
+        /* Hero Section */
+        header {
+            min-height: 80vh;
+            display: block;
+            position: relative;
+            background: radial-gradient(circle at 80% 20%, rgba(76, 201, 240, 0.15), transparent 40%),
+                        radial-gradient(circle at 20% 80%, rgba(114, 9, 183, 0.15), transparent 50%),
+                        #0b132b;
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+
+        .logo-sub {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: #4cc9f0;
+            margin-bottom: 12px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .logo-main {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #ffffff;
+        }
+
+        .hero-tagline {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 48px auto;
+            color: #cbd5e1;
+            font-weight: 400;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(76, 201, 240, 0.4);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            margin-bottom: 40px;
+            color: #4cc9f0;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 4px rgba(76, 201, 240, 0.2); }
+            100% { box-shadow: 0 0 16px rgba(76, 201, 240, 0.5); }
+        }
+
+        /* Main Content Grid Layout */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px 100px 24px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 32px;
+            border-left: 4px solid #4cc9f0;
+            padding-left: 16px;
+            color: #ffffff;
+        }
+
+        /* MVV Block */
+        .mvv-container {
+            display: block;
+        }
+
+        .mvv-item {
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .mvv-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .mvv-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #4cc9f0;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .mvv-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .mvv-text {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        /* Core Businesses */
+        .business-list {
+            display: block;
+        }
+
+        .business-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .business-num {
+            font-size: 14px;
+            color: #4cc9f0;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .business-name {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .business-desc {
+            font-size: 14px;
+            color: #94a3b8;
+            text-align: justify;
+        }
+
+        /* Effectuation Principles */
+        .principles-grid {
+            display: block;
+        }
+
+        .principle-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .principle-item::before {
+            content: "•";
+            color: #4cc9f0;
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+            top: -2px;
+        }
+
+        .principle-name {
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .principle-desc {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* Contact / Footer Info */
+        .footer-info {
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 40px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header { padding: 60px 16px; min-height: auto; }
+            .logo-main { font-size: 32px; }
+            .hero-tagline { font-size: 16px; }
+            section { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-container">
+            <span class="logo-sub">SAGAMI Social Innovation Lab</span>
+            <h1 class="logo-main">さがみソーシャルイノベーションラボ</h1>
+            <div class="status-badge">COMING SOON — 2026 始動</div>
+            <p class="hero-tagline">
+                地域の固有資産と先端技術を融合し、<br>社会的価値と経済利益が循環する持続可能な未来を創る。
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <!-- MVV Section -->
+        <section id="mvv">
+            <h2 class="section-title">Mission / Vision / Value</h2>
+            <div class="mvv-container">
+                <div class="mvv-item">
+                    <span class="mvv-label">Mission</span>
+                    <h3 class="mvv-title">私たちの使命・存在意義</h3>
+                    <p class="mvv-text">地域の固有資産と先端技術を融合し、社会的価値と経済利益が循環する持続可能な未来を創る</p>
+                </div>
+                <div class="mvv-item">
+                    <span class="mvv-label">Vision</span>
+                    <h3 class="mvv-title">私たちが目指す未来の姿</h3>
+                    <p class="mvv-text">相模から世界へ。地域とデジタルが響き合い、次世代の産業と人材が育ち続けるエコシステムの創成</p>
+                </div>
+                <div class="mvv-item">
+                    <span class="mvv-label">Value</span>
+                    <h3 class="mvv-title">私たちが共有する行動指針・価値観（CSV Driven）</h3>
+                    <p class="mvv-text">
+                        1. 社会的価値と経済的価値の両立: 共通価値の創造 (CSV Driven)<br>
+                        2. 今ある持ち札からすぐ始める: 手中の鳥の原則 (Bird in Hand)<br>
+                        3. 仲間や地域、サポーターとの対話による共創: クレイジーキルトの原則 (Crazy Quilt)<br>
+                        4. 小さく試して、賢く転ぶ: 許容可能な損失の原則 (Affordable Loss)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Section -->
+        <section id="business">
+            <h2 class="section-title">Core Businesses</h2>
+            <p style="font-size:14px; color:#94a3b8; margin-bottom:24px;">
+                単なる慈善活動にとどまらず、市場のニーズに応える強固なビジネスモデルを通じて社会的課題を解決する「CSV (Creating Shared Value)」アプローチにより、以下の4つのコア事業を有機的に連携させて展開します。
+            </p>
+            
+            <div class="business-list">
+                <div class="business-card">
+                    <span class="business-num">01</span>
+                    <h3 class="business-name">地域経済活性化・産業創出事業（総論・プラットフォーム）</h3>
+                    <p class="business-desc">相模原市を中心とした神奈川県中西部エリアをフィールドとし、地域の未利用資源や潜在能力を掘り起こします。将来的には海外販路開拓やグローバル市場とのマッチングを通じて外貨を獲得し、地域へ還元する次世代の持続可能な産業エコシステムを創出・育成します。</p>
+                </div>
+
+                <div class="business-card">
+                    <span class="business-num">02</span>
+                    <h3 class="business-name">アグリビジネス事業・グローバル産業創出（かながわ農業版MBA）</h3>
+                    <p class="business-desc">農業を独立したビジネスとして再定義し、「儲かる農業」への転換を志向。持続可能なアグリビジネスを自社・パートナー・地域と共に創出すると同時に、海外の最先端アグリテックや輸出戦略に精通した次世代の高度な農業人材を育成します。（創業当初は佐野川茶を中心とした足柄茶の事業創出、農業人材の育成、および観光事業に注力）</p>
+                </div>
+
+                <div class="business-card">
+                    <span class="business-num">03</span>
+                    <h3 class="business-name">伝統産業次世代継承・国際教育事業（エデュテイク）</h3>
+                    <p class="business-desc">地域に根差す伝統産業や文化的価値を「探究学習」などの教育コンテンツと結びつけ、次世代のファンを育てる教育事業を展開。インバウンド層や海外の教育機関向けの国際文化教育プログラム、および越境取引へと発展させ、地域の文化的資産を世界的な価値へと昇華させます。</p>
+                </div>
+
+                <div class="business-card">
+                    <span class="business-num">04</span>
+                    <h3 class="business-name">シビックテック・デジタル利活用事業（コア・基盤）</h3>
+                    <p class="business-desc">市民参加型の社会課題解決（シビックテック）をベースに、AIや先端テクノロジーなどのデジタル技術を最適に利活用する事業を創出。海外の先進的なコミュニティや国際的な技術スタンダードと連携し、各事業へ横断的に注入することで、全事業のスケールと社会的インパクトを世界水準へと引き上げます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principles Section -->
+        <section id="principles">
+            <h2 class="section-title">Action Principles</h2>
+            <p style="font-size:14px; color:#94a3b8; margin-bottom:24px;">不確実性の高い環境に適応し、迅速に行動するため、私たちは以下の「エフェクチュエーション（起業家的意思決定理論）」の5つの原則を共有し、実践します。</p>
+            
+            <div class="principles-grid">
+                <div class="principle-item">
+                    <div class="principle-name">手中の鳥の原則 (Bird in Hand)</div>
+                    <div class="principle-desc">まずメンバーの現在の持ち札・リソース（専門性、技術、人脈）を最大限に活かして、今できる具体的な行動から着手する。</div>
+                </div>
+                <div class="principle-item">
+                    <div class="principle-name">許容可能な損失の原則 (Affordable Loss)</div>
+                    <div class="principle-desc">予測できない将来の利益を最大化しようとするのではなく、万が一失敗した場合でも各自が許容できる損失（時間、エネルギー、出資資金など）を予め見定め、その範囲内で検証と挑戦を行う。</div>
+                </div>
+                <div class="principle-item">
+                    <div class="principle-name">クレイジーキルトの原則 (Crazy Quilt)</div>
+                    <div class="principle-desc">社会的ミッションに共感し、コミットしてくれる多様なパートナー（顧客、地域住民、他企業、外部サポーター等）との協働関係を早期に構築し、彼らとの対話を通じて事業の輪郭を共創していく。</div>
+                </div>
+                <div class="principle-item">
+                    <div class="principle-name">レモネードの原則 (Lemonade)</div>
+                    <div class="principle-desc">予期せぬ事態や計画の失敗、偶然の出来事をリスクとして排除せず、新たな事業の機会やヒントとして捉え、柔軟に方向転換を行う原動力とする。</div>
+                </div>
+                <div class="principle-item">
+                    <div class="principle-name">飛行機のパイロットの原則 (Pilot in Plane)</div>
+                    <div class="principle-desc">予測不能な未来をコントロールしようとするのではなく、自分たちが「今コントロールできる要素」に集中し、自らの手で未来を創り出す。</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-info">
+            <p>&copy; 2026 SAGAMI Social Innovation Lab (SSIL). All Rights Reserved.</p>
+            <p style="margin-top: 8px; font-size: 11px; color: #475569;">株式会社さがみソーシャルイノベーションラボ 設立準備室</p>
+        </div>
+    </main>
+
+</body>
+</html>
